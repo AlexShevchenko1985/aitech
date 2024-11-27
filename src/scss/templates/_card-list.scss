@@ -1,0 +1,11 @@
+@use "../_variables" as *;
+
+.card-list {
+  display: flex;
+
+  &__item {
+    flex: 1 0 0%;
+    display: flex;
+    justify-content: center;
+  }
+}

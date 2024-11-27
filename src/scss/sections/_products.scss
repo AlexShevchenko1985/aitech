@@ -1,0 +1,37 @@
+@use "../_variables" as *;
+
+.products {
+  padding-top: 70px;
+  padding-bottom: 110px;
+  text-align: center;
+  
+  @include breakpoint(md) {
+    padding-top: 120px;
+    padding-bottom: 180px;
+  }
+  
+  .section {
+    
+    &__title,
+    &__brief {
+      margin-bottom: 24px;
+    }
+    
+    &__brief {
+      margin-top: 24px;
+      max-width: 828px;
+      margin-inline: auto;
+    }
+  }
+  
+  .card-list {
+    flex-wrap: wrap;
+    column-gap: 40px;
+    row-gap: 50px;
+    margin-top: 60px;
+    
+    @include breakpoint(md) {
+      row-gap: 70px;
+    }
+  }
+}

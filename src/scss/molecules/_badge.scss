@@ -1,0 +1,27 @@
+@use "../_variables" as *;
+
+.badge-powered {
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: 52px;
+  font-size: 12px;
+  line-height: 1;
+  text-transform: uppercase;
+  position: relative;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 2px solid transparent;
+    background: linear-gradient(90deg, $color-accent, $color-accent-light) border-box;
+    -webkit-mask: linear-gradient(#fff 0, #fff 0) padding-box, linear-gradient(#fff 0, #fff 0);
+    mask: linear-gradient(#fff 0, #fff 0) padding-box, linear-gradient(#fff 0, #fff 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+  }
+}
