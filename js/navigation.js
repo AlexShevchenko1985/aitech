@@ -17,33 +17,36 @@ document.addEventListener("DOMContentLoaded", () => {
 	const video = document.getElementById('video');
 	const playBtn = document.getElementById('play-btn');
 
-	playBtn.addEventListener('click', () => {
-		if (video.paused) {
-			video.play();
-			playBtn.style.display = 'none';
-		} else {
-			video.pause();
-			playBtn.style.display = 'block';
-		}
-	});
+  if (video && playBtn) {
 
-	video.addEventListener('click', () => {
-		if (video.paused) {
-			video.play();
-			playBtn.style.display = 'none';
-		} else {
-			video.pause();
-			playBtn.style.display = 'block';
-		}
-	});
+    playBtn.addEventListener('click', () => {
+      if (video.paused) {
+        video.play();
+        playBtn.style.display = 'none';
+      } else {
+        video.pause();
+        playBtn.style.display = 'block';
+      }
+    });
 
-	video.addEventListener('play', () => {
-		playBtn.style.display = 'none';
-	});
+    video.addEventListener('click', () => {
+      if (video.paused) {
+        video.play();
+        playBtn.style.display = 'none';
+      } else {
+        video.pause();
+        playBtn.style.display = 'block';
+      }
+    });
 
-	video.addEventListener('pause', () => {
-		playBtn.style.display = 'block';
-	});
+    video.addEventListener('play', () => {
+      playBtn.style.display = 'none';
+    });
+
+    video.addEventListener('pause', () => {
+      playBtn.style.display = 'block';
+    });
+  }
 
 
 
@@ -138,6 +141,20 @@ document.addEventListener("DOMContentLoaded", () => {
 			item.classList.add('active');
 		});
 	});
+
+  const scrollBtn = document.querySelector('.scroll-btn');
+  const heroSection = document.querySelector('.hero-inner-section');
+
+  if (!scrollBtn || !heroSection) {
+    return;
+  }
+
+  scrollBtn.addEventListener('click', function () {
+    const nextSection = heroSection.nextElementSibling;
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
 
 });
 
