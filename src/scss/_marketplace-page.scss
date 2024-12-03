@@ -406,6 +406,257 @@ body {
   }
 }
 
+.slider-tabs {
+  padding: 40px 0;
+  overflow: hidden;
+  @include breakpoint(sm) {
+    padding: 0;
+  }
+  .container {
+    max-width: 1080px;
+  }
+
+  .heading {
+    text-align: center;
+    margin-bottom: 40px;
+    h2 {
+      font-size: 32px;
+      line-height: 34px;
+      font-weight: 400;
+      color: $white;
+      span {
+        font-weight: 700;
+        color: $green-accent;
+      }
+    }
+    .tab-btn-list {
+      margin: 32px auto 0;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: fit-content;
+      background: url("/wp-content/themes/aitech/src/img/heading-bg.png");
+      padding: 10px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      &:before {
+        content: "";
+        background: url("/wp-content/themes/aitech/src/img/heading-line.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        inset-inline-start: calc(-38% - 16px);
+        width: 40%;
+        height: 80%;
+      }
+      &:after {
+        content: "";
+        background: url("/wp-content/themes/aitech/src/img/heading-line.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) scaleX(-1);
+        inset-inline-end: calc(-38% - 16px);
+        width: 40%;
+        height: 80%;
+      }
+      .tab-btn {
+        font-family: 'Darker Grotesque', sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 16px;
+        color: $text-green;
+        text-transform: uppercase;
+        padding: 14px 2px;
+        cursor: pointer;
+        position: relative;
+        margin: 0 24px;
+        &:before {
+          content: "";
+          background: url("/wp-content/themes/aitech/src/img/active-bg.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: 24px;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          inset-inline-start: -21px;
+          display: none;
+        }
+        &:after {
+          content: "";
+          background: url("/wp-content/themes/aitech/src/img/active-bg.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: 24px;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          inset-inline-end: -21px;
+          transform: scaleX(-1);
+          display: none;
+        }
+        &.active {
+          cursor: default;
+          background: $green-accent;
+          color: $bg-color;
+          &:before,
+          &:after {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  .tabs-slider {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    transition: opacity .3s, visibility .3s;
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      height: 100%;
+      overflow: visible;
+    }
+    .swiper {
+      overflow: visible;
+      .swiper-wrapper {
+        @include breakpoint(sm) {
+          transform: none;
+          display: grid;
+          column-gap: 40px;
+          row-gap: 40px;
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      .swiper-slide {
+        max-width: 280px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        &:after {
+          content: "";
+          background: $line-green;
+          width: 150px;
+          height: 2px;
+          position: absolute;
+          inset-inline-end: -80px;
+          inset-block-start: calc(100% - 29px);
+        }
+        @include breakpoint(sm) {
+          max-width: 100%;
+        }
+        .slide-holder {
+          min-height: 392px;
+          display: flex;
+          flex-direction: column;
+          mask-image: url("/wp-content/themes/aitech/src/img/tab-slide-mask.webp");
+          mask-repeat: no-repeat;
+          mask-position: left;
+          border-radius: 15px;
+          background: linear-gradient(343.21deg, rgba(0, 128, 128, .2) 27.94%, #008080 73.43%, #0FF47F 91.56%);
+          position: relative;
+          @include breakpoint(sm) {
+            mask-image: url("/wp-content/themes/aitech/src/img/tabs-slide-mask-desk.webp");
+          }
+          .bg {
+            mask-image: url("/wp-content/themes/aitech/src/img/tab-slide-mask.webp");
+            mask-repeat: no-repeat;
+            mask-position: left;
+            border-radius: 15px;
+            width: calc(100% - 2px);
+            height: calc(100% - 2px);
+            position: absolute;
+            inset-inline-start: 1px;
+            inset-block-start: 1px;
+            background: $bg-color;
+            @include breakpoint(sm) {
+              mask-image: url("/wp-content/themes/aitech/src/img/tabs-slide-mask-desk.webp");
+            }
+          }
+          .content {
+            margin-top: auto;
+            padding: 24px 24px 56px;
+            position: relative;
+            z-index: 1;
+            h4 {
+              font-size: 32px;
+              line-height: 34px;
+              margin: 0 0 16px;
+              color: $green-accent;
+            }
+            p {
+              font-size: 14px;
+              line-height: 18px;
+              color: $white;
+              margin: 0;
+            }
+          }
+        }
+        .icon {
+          margin-top: auto;
+          display: flex;
+          justify-content: center;
+          position: relative;
+          z-index: 1;
+          img {
+            width: 56px;
+            height: 56px;
+            object-fit: contain;
+          }
+          &:before {
+            content: "";
+            background: linear-gradient(270deg, #0FF47F 0%, #008080 33.88%, rgba(0, 128, 128, 0) 100%);
+            width: calc(50% - 38px);
+            height: 2px;
+            position: absolute;
+            inset-block-start: 50%;
+            transform: translateY(-50%);
+            inset-inline-start: 0;
+          }
+          &:after {
+            content: "";
+            background: linear-gradient(270deg, #0FF47F 0%, #008080 33.88%, rgba(0, 128, 128, 0) 100%);
+            width: calc(50% - 38px);
+            height: 2px;
+            position: absolute;
+            inset-block-start: 50%;
+            transform: translateY(-50%) scaleX(-1);
+            inset-inline-end: 0;
+          }
+        }
+        &:last-of-type {
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+    .swiper-pagination {
+      position: initial;
+      margin-top: 44px;
+      .swiper-pagination-bullet {
+        opacity: 1;
+        width: 6px;
+        height: 6px;
+        background: rgba(255, 255, 255, .15);
+        margin: 0 8px;
+        &.swiper-pagination-bullet-active {
+          background: $green-accent;
+        }
+      }
+    }
+  }
+}
+
 @keyframes myAnime {
   0% {
     top: 5px;

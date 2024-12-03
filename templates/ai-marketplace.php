@@ -106,7 +106,7 @@ get_header();
         <div class="heading">
             <h2>Why <span>Solidus AITECH</span>?</h2>
             <div class="tab-btn-list">
-                <div class="tab-btn active">Users</div>
+                <div class="tab-btn">Users</div>
                 <div class="tab-btn">Publishers</div>
             </div>
         </div>
@@ -114,51 +114,82 @@ get_header();
             <div class="swiper js-tabs-slider">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class="icon">
-                            <img src="<?php echo get_template_directory_uri() ?>/src/img/grid-icon1.svg" alt="Icon">
-                        </div>
                         <div class="slide-holder">
                             <div class="bg"></div>
                             <div class="content">
-                                <h4>Foundational AI Models</h4>
-                                <p>Solidus AI TECH provides users with high-speed inferencing for open-source models through the SambaNova RDU Technology from our HPC Datacentre in Romania. These models are accessible via API subscriptions, with flexible payment options to meet the needs of businesses, researchers, and developers.</p>
+                                <h4>Cost-Effective Solutions</h4>
+                                <p>Flexible subscription models and pay-as-you-go pricing ensure you only pay for what you need, without the burden of maintaining expensive infrastructure.</p>
                             </div>
+                        </div>
+                        <div class="icon">
+                            <img src="<?php echo get_template_directory_uri() ?>/src/img/tab-icon1.svg" alt="Icon">
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="icon">
-                            <img src="<?php echo get_template_directory_uri() ?>/src/img/grid-icon2.svg" alt="Icon">
-                        </div>
                         <div class="slide-holder">
                             <div class="bg"></div>
                             <div class="content">
-                                <h4>AI Agents</h4>
-                                <p>Publishers can create specialized AI agents designed for specific tasks, offering them to users through simple subscriptions. These agents integrate easily into applications, providing a ready-made solution for automation and productivity.</p>
+                                <h4>Access to Cutting-Edge AI</h4>
+                                <p>Whether you need foundational AI models, task-specific AI agents, or complete applications, the marketplace offers a wide range of solutions ready for immediate use.</p>
                             </div>
+                        </div>
+                        <div class="icon">
+                            <img src="<?php echo get_template_directory_uri() ?>/src/img/tab-icon2.svg" alt="Icon">
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="icon">
-                            <img src="<?php echo get_template_directory_uri() ?>/src/img/grid-icon3.svg" alt="Icon">
-                        </div>
                         <div class="slide-holder">
                             <div class="bg"></div>
                             <div class="content">
-                                <h4>Stand-alone AI Applications</h4>
-                                <p>Publishers can also develop and offer stand-alone AI applications with intuitive interfaces. These applications can be hosted on the publisher’s infrastructure or deployed via our platform, allowing users to subscribe and benefit from powerful AI tools with minimal setup.</p>
+                                <h4>Seamless Integration</h4>
+                                <p>Easily integrate AI solutions into your workflows with minimal setup, allowing for faster deployment and quicker results.</p>
                             </div>
+                        </div>
+                        <div class="icon">
+                            <img src="<?php echo get_template_directory_uri() ?>/src/img/tab-icon3.svg" alt="Icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <div class="tabs-slider">
+            <div class="swiper js-tabs-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slide-holder">
+                            <div class="bg"></div>
+                            <div class="content">
+                                <h4>Cost-Effective Solutions</h4>
+                                <p>Flexible subscription models and pay-as-you-go pricing ensure you only pay for what you need, without the burden of maintaining expensive infrastructure.</p>
+                            </div>
+                        </div>
+                        <div class="icon">
+                            <img src="<?php echo get_template_directory_uri() ?>/src/img/tab-icon1.svg" alt="Icon">
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="icon">
-                            <img src="<?php echo get_template_directory_uri() ?>/src/img/grid-icon4.svg" alt="Icon">
-                        </div>
                         <div class="slide-holder">
                             <div class="bg"></div>
                             <div class="content">
-                                <h4>Datamart</h4>
-                                <p>Our Datamart offers high-quality labeled datasets from trusted aggregators in the Web 3.0 ecosystem. Users can purchase datasets to train their AI models and build high-impact use cases.</p>
+                                <h4>Access to Cutting-Edge AI</h4>
+                                <p>Whether you need foundational AI models, task-specific AI agents, or complete applications, the marketplace offers a wide range of solutions ready for immediate use.</p>
                             </div>
+                        </div>
+                        <div class="icon">
+                            <img src="<?php echo get_template_directory_uri() ?>/src/img/tab-icon2.svg" alt="Icon">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-holder">
+                            <div class="bg"></div>
+                            <div class="content">
+                                <h4>Seamless Integration</h4>
+                                <p>Easily integrate AI solutions into your workflows with minimal setup, allowing for faster deployment and quicker results.</p>
+                            </div>
+                        </div>
+                        <div class="icon">
+                            <img src="<?php echo get_template_directory_uri() ?>/src/img/tab-icon3.svg" alt="Icon">
                         </div>
                     </div>
                 </div>
