@@ -566,6 +566,7 @@ body {
           position: relative;
           @include breakpoint(sm) {
             mask-image: url("/wp-content/themes/aitech/src/img/tabs-slide-mask-desk.webp");
+            mask-position: center bottom;
           }
           .bg {
             mask-image: url("/wp-content/themes/aitech/src/img/tab-slide-mask.webp");
@@ -580,6 +581,7 @@ body {
             background: $bg-color;
             @include breakpoint(sm) {
               mask-image: url("/wp-content/themes/aitech/src/img/tabs-slide-mask-desk.webp");
+              mask-position: center bottom;
             }
           }
           .content {
@@ -592,6 +594,11 @@ body {
               line-height: 34px;
               margin: 0 0 16px;
               color: $green-accent;
+              @include breakpoint(sm) {
+                font-size: 36px;
+                line-height: 38px;
+
+              }
             }
             p {
               font-size: 14px;
