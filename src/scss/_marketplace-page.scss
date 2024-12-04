@@ -424,6 +424,14 @@ body {
       line-height: 34px;
       font-weight: 400;
       color: $white;
+      @include breakpoint(sm) {
+        font-size: 4.45vw;
+        line-height: 4.8vw;
+      }
+      @include breakpoint(lg) {
+        font-size: 64px;
+        line-height: 69px;
+      }
       span {
         font-weight: 700;
         color: $green-accent;
@@ -441,6 +449,9 @@ body {
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
+      @include breakpoint(sm) {
+        margin: 60px auto 0;
+      }
       &:before {
         content: "";
         background: url("/wp-content/themes/aitech/src/img/heading-line.svg");
@@ -452,6 +463,12 @@ body {
         inset-inline-start: calc(-38% - 16px);
         width: 40%;
         height: 80%;
+        @include breakpoint(sm) {
+          width: 16vw;
+          height: 5.5vw;
+          transform: translateY(-74%);
+          inset-inline-start: -17vw;
+        }
       }
       &:after {
         content: "";
@@ -464,6 +481,12 @@ body {
         inset-inline-end: calc(-38% - 16px);
         width: 40%;
         height: 80%;
+        @include breakpoint(sm) {
+          width: 16vw;
+          height: 5.5vw;
+          transform: translateY(-74%) scaleX(-1);
+          inset-inline-end: -17vw;
+        }
       }
       .tab-btn {
         font-family: 'Darker Grotesque', sans-serif;
@@ -550,6 +573,10 @@ body {
           position: absolute;
           inset-inline-end: -80px;
           inset-block-start: calc(100% - 29px);
+          @include breakpoint(sm) {
+            width: 60%;
+            inset-inline-end: -35%;
+          }
         }
         @include breakpoint(sm) {
           max-width: 100%;
@@ -564,9 +591,13 @@ body {
           border-radius: 15px;
           background: linear-gradient(343.21deg, rgba(0, 128, 128, .2) 27.94%, #008080 73.43%, #0FF47F 91.56%);
           position: relative;
+          transition: all .3s;
           @include breakpoint(sm) {
             mask-image: url("/wp-content/themes/aitech/src/img/tabs-slide-mask-desk.webp");
             mask-position: center bottom;
+            background: linear-gradient(0deg, #002121, #002121),
+            linear-gradient(0deg, #000405, #000405),
+            linear-gradient(193.34deg, rgba(0, 4, 5, 0) 39.22%, #000405 75.3%);
           }
           .bg {
             mask-image: url("/wp-content/themes/aitech/src/img/tab-slide-mask.webp");
@@ -628,6 +659,10 @@ body {
             inset-block-start: 50%;
             transform: translateY(-50%);
             inset-inline-start: 0;
+            transition: all .3s;
+            @include breakpoint(sm) {
+              background: $line-green;
+            }
           }
           &:after {
             content: "";
@@ -638,11 +673,50 @@ body {
             inset-block-start: 50%;
             transform: translateY(-50%) scaleX(-1);
             inset-inline-end: 0;
+            transition: all .3s;
+            @include breakpoint(sm) {
+              background: $line-green;
+            }
           }
         }
         &:last-of-type {
           &:after {
             display: none;
+            @include breakpoint(sm) {
+              display: block;
+              background: linear-gradient(270deg, #122220 0%, #122220 50%, rgba(18, 34, 32, 0) 100%);
+              transform: scaleX(-1);
+            }
+          }
+        }
+        &:first-of-type {
+          &:before {
+            display: none;
+            @include breakpoint(sm) {
+              content: "";
+              display: block;
+              background: linear-gradient(270deg, #122220 0%, #122220 50%, rgba(18, 34, 32, 0) 100%);
+              width: 60%;
+              inset-inline-start: -35%;
+              height: 2px;
+              position: absolute;
+              inset-block-start: calc(100% - 29px);
+            }
+          }
+        }
+        &:hover {
+          .slide-holder {
+            @include breakpoint(sm) {
+              background: linear-gradient(343.21deg, rgba(0, 128, 128, .2) 27.94%, #008080 73.43%, #0FF47F 91.56%);
+            }
+          }
+          .icon {
+            @include breakpoint(sm) {
+              &:before,
+              &:after {
+                background: linear-gradient(270deg, #0FF47F 0%, #008080 33.88%, rgba(0, 128, 128, 0) 100%);
+              }
+            }
           }
         }
       }
@@ -659,6 +733,200 @@ body {
         &.swiper-pagination-bullet-active {
           background: $green-accent;
         }
+      }
+    }
+  }
+}
+
+.collaboration {
+  padding: 28px 0 60px;
+  .heading {
+    text-align: center;
+    margin-bottom: 40px;
+    h2 {
+      font-size: 32px;
+      line-height: 34px;
+      font-weight: 400;
+      color: $white;
+      margin-bottom: 16px;
+      @include breakpoint(sm) {
+        font-size: 4.45vw;
+        line-height: 4.8vw;
+      }
+      @include breakpoint(lg) {
+        font-size: 64px;
+        line-height: 69px;
+      }
+      span {
+        font-weight: 700;
+        color: $green-accent;
+      }
+    }
+    p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 18px;
+      color: $text-green;
+    }
+  }
+  .content {
+    .video {
+      position: relative;
+      min-height: 700px;
+      video {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        inset-block-start: 0;
+        inset-inline-start: 0;
+        object-fit: contain;
+      }
+    }
+    .content-items {
+      display: flex;
+      flex-direction: column;
+      row-gap: 25px;
+      .item {
+        width: 100%;
+        max-width: 318px;
+        margin: 0 auto;
+        .item-holder {
+          position: relative;
+          &:after {
+            content: "";
+            background: url(/wp-content/themes/aitech/src/img/mobile-line.svg);
+            width: 6px;
+            height: 29px;
+            position: absolute;
+            inset-inline-start: 50%;
+            transform: translateX(-50%);
+            inset-block-end: -26px;
+            background-repeat: no-repeat;
+          }
+          .icon {
+            width: 70px;
+            height: 128px;
+            inset-block-start: 7px;
+            inset-inline-start: 7px;
+            position: absolute;
+            background: $bg-color;
+            border-top-left-radius: 15px;
+            &:before {
+              content: "";
+              background: linear-gradient(336.91deg, #122220 70%, rgba(0, 128, 128, 0.2) 77.22%, #008080 102.53%, #0FF47F 112.22%);
+              width: calc(100% + 2px);
+              height: calc(100% + 2px);
+              inset-inline-start: -1px;
+              inset-block-start: -1px;
+              border-radius: 15px;
+              position: absolute;
+            }
+            &:after {
+              content: "";
+              position: absolute;
+              background: #000;
+              border-top-left-radius: 15px;
+              width: 100%;
+              height: 100%;
+              inset-block-start: 0;
+              inset-inline-start: 0;
+            }
+            img {
+              position: relative;
+              z-index: 1;
+              width: 32px;
+              height: 32px;
+              object-fit: contain;
+              margin-inline-start: 10px;
+              margin-block-start: 25px;
+            }
+          }
+          .content-holder {
+            height: 220px;
+            width: 100%;
+            mask-image: url(/wp-content/themes/aitech/src/img/com-mask.webp);
+            mask-repeat: no-repeat;
+            background: linear-gradient(0deg, #002121, #002121), linear-gradient(0deg, #000405, #000405), linear-gradient(180deg, rgba(0, 4, 5, 0) 32.74%, #000405 74%);
+            border-radius: 15px;
+            &:after {
+              content: "";
+              background: #000;
+              mask-image: url(/wp-content/themes/aitech/src/img/com-mask.webp);
+              mask-repeat: no-repeat;
+              width: calc(100% - 3px);
+              height: calc(100% - 2px);
+              inset-inline-start: 1px;
+              inset-block-start: 1px;
+              position: absolute;
+              border-radius: 15px;
+            }
+            .bg {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+              inset-block-start: 0;
+              inset-inline-start: 0;
+              background: linear-gradient(336.23deg, rgba(0, 128, 128, 0) 61.92%, #008080 83.08%, #0FF47F 91.52%);
+            }
+            .text-content {
+              position: relative;
+              z-index: 1;
+              padding: 24px;
+              height: 100%;
+              h4 {
+                padding-inline-start: 64px;
+                font-size: 36px;
+                line-height: 36px;
+                font-weight: 700;
+                color: $green-accent;
+                margin: 0 0 32px;
+              }
+              p {
+                font-size: 14px;
+                line-height: 18px;
+                color: $white;
+              }
+              &.coming-soon {
+                background: url(/wp-content/themes/aitech/src/img/coming-soon-mask.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                h4 {
+                  font-family: 'Roboto', sans-serif;
+                  font-size: 24px;
+                  line-height: 31px;
+                  font-weight: 600;
+                  margin-bottom: 0;
+                  padding-inline-start: 0;
+                }
+              }
+            }
+          }
+        }
+        &:last-of-type {
+          .item-holder {
+            &:after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .btn-holder {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    .btn {
+      width: fit-content;
+      &.green-btn {
+        background: rgba(0, 0, 0, .5);
+        border: 2px solid $green-accent;
+        color: $green-accent;
+        backdrop-filter: blur(5.9px);
       }
     }
   }

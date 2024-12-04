@@ -78,7 +78,9 @@ get_header();
 		                    <img src="<?php echo get_template_directory_uri() ?>/src/img/grid-icon4.svg" alt="Icon">
                         </div>
                         <div class="slide-holder">
-			                <div class="bg"></div>
+			                <div class="bg">
+
+			                </div>
 			                <div class="content">
 			                    <h4>Datamart</h4>
 			                    <p>Our Datamart offers high-quality labeled datasets from trusted aggregators in the Web 3.0 ecosystem. Users can purchase datasets to train their AI models and build high-impact use cases.</p>
@@ -127,7 +129,9 @@ get_header();
                     </div>
                     <div class="swiper-slide">
                         <div class="slide-holder">
-                            <div class="bg"></div>
+                            <div class="bg">
+
+                            </div>
                             <div class="content">
                                 <h4>Access to Cutting-Edge AI</h4>
                                 <p>Whether you need foundational AI models, task-specific AI agents, or complete applications, the marketplace offers a wide range of solutions ready for immediate use.</p>
@@ -197,6 +201,78 @@ get_header();
             </div>
         </div>
     </div>
+</section>
+<section id="section5" class="collaboration">
+	<div class="container">
+		<div class="heading">
+			<h2>Community and <span>Collaboration</span></h2>
+			<p>At Solidus AITECH, we’re building more than just a marketplace—we’re building a community.</p>
+		</div>
+		<div class="content">
+			<div class="video">
+			</div>
+			<div class="content-items">
+				<div class="item">
+					<div class="item-holder">
+						<div class="icon">
+                            <img src="<?php echo get_template_directory_uri() ?>/src/img/com-icon1.svg" alt="Icon">
+                        </div>
+                        <div class="content-holder">
+                            <div class="bg"></div>
+                            <div class="text-content">
+                                <h4>Issue Resolution</h4>
+                                <p>Users can rise complains or issues related solutions they have purchased and assistance from developers and the community.</p>
+                            </div>
+                        </div>
+					</div>
+				</div>
+				<div class="item">
+                    <div class="item-holder">
+                        <div class="icon">
+                            <img src="<?php echo get_template_directory_uri() ?>/src/img/com-icon2.svg" alt="Icon">
+                        </div>
+                        <div class="content-holder">
+                            <div class="bg"></div>
+                            <div class="text-content">
+                                <h4>Industry Discussions</h4>
+                                <p>Engage with experts and peers to discuss the latest trends, challenges, and innovations in the AI landscape</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-holder">
+                        <div class="icon">
+                            <img src="<?php echo get_template_directory_uri() ?>/src/img/com-icon3.svg" alt="Icon">
+                        </div>
+                        <div class="content-holder">
+                            <div class="bg"></div>
+                            <div class="text-content">
+                                <h4>Bespoke AI Requests</h4>
+                                <p>Users can request custom AI solutions, which developers can create and offer one-time purchases.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-holder">
+                        <div class="icon">
+                            <img src="<?php echo get_template_directory_uri() ?>/src/img/com-icon4.svg" alt="Icon">
+                        </div>
+                        <div class="content-holder">
+                            <div class="bg"></div>
+                            <div class="text-content coming-soon">
+                                <h4>Coming soon</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			</div>
+		</div>
+		<div class="btn-holder">
+			<a href="" class="btn green-btn">Get started</a>
+		</div>
+	</div>
 </section>
 
 <?php
