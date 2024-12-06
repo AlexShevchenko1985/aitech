@@ -1232,6 +1232,10 @@ body {
       inset-inline-start: 0;
       top: 50%;
       transform: translateY(-52%);
+      display: none;
+      @include breakpoint(sm) {
+        display: block;
+      }
     }
     .content-column {
       width: 100%;
@@ -1271,15 +1275,60 @@ body {
               visibility: hidden;
             }
           }
+          &:before {
+            content: "";
+            background: url(/wp-content/themes/aitech/src/img/mobile-tab-line.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 26px;
+            height: 68px;
+            position: absolute;
+            inset-inline-start: -24px;
+            inset-block-end: -68px;
+            transform: scaleX(-1);
+            @include breakpoint(sm) {
+              display: none;
+            }
+          }
         }
         .mobile-only {
           width: 100%;
-          margin: 0 auto 68px;
-          max-width: 260px;
+          position: relative;
+          &:before {
+            content: "";
+            background: url(/wp-content/themes/aitech/src/img/mobile-tab-line.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 26px;
+            height: 68px;
+            position: absolute;
+            inset-inline-start: -24px;
+            inset-block-end: -68px;
+            @include breakpoint(sm) {
+              display: none;
+            }
+          }
+          &:after {
+            content: "";
+            background: #2C343B;
+            width: 2px;
+            height: calc(100% + 15px);
+            position: absolute;
+            inset-inline-start: -24px;
+            inset-block-end: 0;
+            @include breakpoint(sm) {
+              display: none;
+            }
+          }
           video {
             width: 100%;
+            margin: 0 auto 68px;
+            max-width: 260px;
             height: 100%;
             object-fit: contain;
+            display: block;
           }
           @include breakpoint(sm) {
             display: none;
@@ -1344,6 +1393,55 @@ body {
         width: 100%;
         height: auto;
       }
+    }
+  }
+}
+
+.banner-section {
+  position: relative;
+  .video-bg {
+    position: absolute;
+    width: 100%;
+    height: calc(100% + 80px);
+    inset-inline-start: 0;
+    inset-block-start: 0;
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .container {
+    height: 100%;
+    .heading-holder {
+      min-height: 680px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      h2 {
+        font-size: 48px;
+        line-height: 51px;
+        font-weight: 400;
+        color: $white;
+        span {
+          font-weight: 700;
+          color: $green-accent;
+        }
+      }
+      .btn-holder {
+        margin-top: 24px;
+        .green-btn {
+          background: rgba(0, 0, 0, .5);
+          border: 2px solid $green-accent;
+          color: $green-accent;
+          backdrop-filter: blur(5.9px);
+        }
+      }
+
     }
   }
 }

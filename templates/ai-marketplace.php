@@ -337,6 +337,21 @@ get_header();
 		</div>
 	</div>
 </section>
+<section id="section7" class="banner-section">
+	<div class="video-bg">
+		<video playsinline autoplay muted loop poster="">
+            <source src="<?php echo get_template_directory_uri() ?>/src/video/bottom-video.webm" type="video/webm">
+        </video>
+	</div>
+	<div class="container">
+		<div class="heading-holder">
+			<h2>Join us today and be part of the<br> <span>AI revolution</span></h2>
+			<div class="btn-holder">
+                <a href="" class="btn green-btn">Get started</a>
+            </div>
+		</div>
+	</div>
+</section>
 
 <?php
 get_footer();
