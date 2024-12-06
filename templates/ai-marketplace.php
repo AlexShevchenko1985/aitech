@@ -42,7 +42,11 @@ get_header();
 							<img src="<?php echo get_template_directory_uri() ?>/src/img/grid-icon1.svg" alt="Icon">
                         </div>
                         <div class="slide-holder">
-							<div class="bg"></div>
+							<div class="bg">
+								<div class="media-block">
+									<img src="<?php echo get_template_directory_uri() ?>/src/img/ex-img.webp" alt="Icon">
+								</div>
+							</div>
 							<div class="content">
 								<h4>Foundational AI Models</h4>
 								<p>Solidus AI TECH provides users with high-speed inferencing for open-source models through the SambaNova RDU Technology from our HPC Datacentre in Romania. These models are accessible via API subscriptions, with flexible payment options to meet the needs of businesses, researchers, and developers.</p>
@@ -117,7 +121,11 @@ get_header();
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="slide-holder">
-                            <div class="bg"></div>
+                            <div class="bg">
+                                <div class="media-block">
+                                    <img src="<?php echo get_template_directory_uri() ?>/src/img/ex-img.webp" alt="Icon">
+                                </div>
+                            </div>
                             <div class="content">
                                 <h4>Cost-Effective Solutions</h4>
                                 <p>Flexible subscription models and pay-as-you-go pricing ensure you only pay for what you need, without the burden of maintaining expensive infrastructure.</p>
@@ -210,6 +218,17 @@ get_header();
 		</div>
 		<div class="content">
 			<div class="video">
+				<div class="head-video">
+					<video playsinline autoplay muted loop >
+                        <source src="<?php echo get_template_directory_uri() ?>/src/video/head-video.webm" type="video/webm">
+                    </video>
+					<div class="ball"><span>Discussion Forum</span></div>
+				</div>
+				<div class="body-video">
+					<video playsinline autoplay muted loop >
+                        <source src="<?php echo get_template_directory_uri() ?>/src/video/body-video.webm" type="video/webm">
+                    </video>
+				</div>
 			</div>
 			<div class="content-items">
 				<div class="item">
@@ -271,6 +290,36 @@ get_header();
 		</div>
 		<div class="btn-holder">
 			<a href="" class="btn green-btn">Get started</a>
+		</div>
+	</div>
+</section>
+<section id="section6" class="two-column-tabs">
+	<div class="container">
+		<div class="heading">
+			<h2>Powered by <span>AITECH</span> Tokens</h2>
+			<p>The AITECH token is the backbone of our marketplace, facilitating every transaction. Whether purchasing AI models, subscribing to agents, or accessing datasets, AITECH tokens make transactions secure and efficient.</p>
+		</div>
+		<div class="tabs-holder">
+			<div class="content-column">
+				<div class="tab-item">
+					<h4>Perpetual Burn Mechanism</h4>
+					<p>To add further value for publishers, Solidus AITECH uses a perpetual burn mechanism. A portion of our profits from every transaction is burned, reducing the overall supply of AITECH tokens over time. This deflationary system helps increase the value of publisher earnings as the marketplace continues to grow.</p>
+				</div>
+				<div class="tab-item">
+                    <h4>Empowering the Gig Economy</h4>
+                    <p>At Solidus AITECH, we are dedicated to democratizing the AI landscape by providing developers with the tools and marketplace to monetize their solutions, while enabling users to access high-performance AI technology. Whether you are a solo developer in the gig economy or a business looking to scale, Solidus AITECH connects you to the future of AI.</p>
+                </div>
+			</div>
+			<div class="video-column">
+				<video playsinline autoplay muted loop poster="">
+                    <source src="<?= get_template_directory_uri() . '/build/video/coin_2x.webm' ?>" type="video/webm">
+                </video>
+			</div>
+			<div class="video-column">
+                <video playsinline autoplay muted loop poster="">
+                    <source src="<?= get_template_directory_uri() . '/build/video/coin_2x.webm' ?>" type="video/webm">
+                </video>
+            </div>
 		</div>
 	</div>
 </section>

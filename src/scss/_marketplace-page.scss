@@ -324,6 +324,35 @@ body {
             inset-block-start: 0;
             inset-inline-start: 0;
             background: linear-gradient(336.23deg, rgba(0, 128, 128, 0) 61.92%, #008080 83.08%, #0FF47F 91.52%);
+            .media-block {
+              position: relative;
+              z-index: 1;
+              width: calc(100% - 2px);
+              height: calc(100% - 2px);
+              margin-top: 1px;
+              margin-inline-start: 1px;
+              border-radius: 15px;
+              mask-image: url("/wp-content/themes/aitech/src/img/slide1-mask.webp");
+              @include breakpoint(sm) {
+                mask-image: url("/wp-content/themes/aitech/src/img/slide1-mask-desktop.webp");
+              }
+              &:after {
+                content: "";
+                background: linear-gradient(180deg, rgba(0, 4, 5, 0) 32.74%, #000405 74%);
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                inset-block-start: 0;
+                inset-inline-start: 0;
+              }
+
+              img,
+              video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
           }
           .content {
             margin-top: auto;
@@ -463,7 +492,7 @@ body {
         inset-inline-start: calc(-38% - 16px);
         width: 40%;
         height: 80%;
-        @include breakpoint(sm) {
+        @include breakpoint(xs) {
           width: 16vw;
           height: 5.5vw;
           transform: translateY(-74%);
@@ -481,7 +510,7 @@ body {
         inset-inline-end: calc(-38% - 16px);
         width: 40%;
         height: 80%;
-        @include breakpoint(sm) {
+        @include breakpoint(xs) {
           width: 16vw;
           height: 5.5vw;
           transform: translateY(-74%) scaleX(-1);
@@ -614,6 +643,35 @@ body {
               mask-image: url("/wp-content/themes/aitech/src/img/tabs-slide-mask-desk.webp");
               mask-position: center bottom;
             }
+            .media-block {
+              position: relative;
+              z-index: 1;
+              width: calc(100% - 2px);
+              height: calc(100% - 2px);
+              margin-top: 1px;
+              margin-inline-start: 1px;
+              border-radius: 15px;
+              mask-image: url("/wp-content/themes/aitech/src/img/tab-slide-mask.webp");
+              @include breakpoint(sm) {
+                mask-image: url("/wp-content/themes/aitech/src/img/tabs-slide-mask-desk.webp");
+                mask-position: center bottom;
+              }
+              img,
+              video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+              &:after {
+                content: "";
+                background: linear-gradient(180deg, rgba(0, 4, 5, 0) 32.74%, #000405 74%);
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                inset-block-start: 0;
+                inset-inline-start: 0;
+              }
+            }
           }
           .content {
             margin-top: auto;
@@ -740,9 +798,16 @@ body {
 
 .collaboration {
   padding: 28px 0 60px;
+  overflow: hidden;
+  @include breakpoint(sm) {
+    padding: 190px 0 300px;
+  }
   .heading {
     text-align: center;
     margin-bottom: 40px;
+    @include breakpoint(sm) {
+      margin-bottom: 94px;
+    }
     h2 {
       font-size: 32px;
       line-height: 34px;
@@ -767,12 +832,103 @@ body {
       font-size: 14px;
       line-height: 18px;
       color: $text-green;
+      @include breakpoint(sm) {
+        font-size: 16px;
+        line-height: 20px;
+      }
     }
   }
   .content {
+    position: relative;
+    &:before {
+      content: "";
+      width: 674px;
+      height: 674px;
+      background: url("/wp-content/themes/aitech/src/img/Ellipse-bg.svg");
+      background-repeat: no-repeat;
+      position: absolute;
+      inset-inline-start: 50%;
+      transform: translateX(-50%);
+      inset-block-start: -70px;
+      border-radius: 50%;
+      display: none;
+      @include breakpoint(sm) {
+        display: block;
+      }
+    }
     .video {
       position: relative;
-      min-height: 700px;
+      min-height: 450px;
+      display: flex;
+      justify-content: center;
+      z-index: 1;
+      @include breakpoint(sm) {
+        min-height: auto;
+      }
+      .body-video {
+        position: absolute;
+        width: 155vw;
+        height: 300px;
+        inset-block-start: 190px;
+        @include breakpoint(sm) {
+          height: 500px;
+        }
+      }
+      .head-video {
+        background: rgba(0, 255, 234, 0.1);
+        border: 1px solid rgba(117, 157, 152, 0.2);
+        backdrop-filter: blur(6.59px);
+        border-radius: 50%;
+        width: 230px;
+        height: 230px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        z-index: 1;
+        @include breakpoint(sm) {
+          width: 294px;
+          height: 294px;
+        }
+      }
+      .ball {
+        background: linear-gradient(0deg, rgba(88, 255, 233, 0.1), rgba(88, 255, 233, 0.1)),
+        linear-gradient(315.04deg, rgba(0, 128, 128, 0) 44.87%, #008080 75.51%, #0FF47F 87.72%);
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: absolute;
+        @include breakpoint(sm) {
+          width: 160px;
+          height: 160px;
+        }
+        &:after {
+          content: "";
+          background: rgba(0, 0, 0, 1);
+          position: absolute;
+          width: calc(100% - 2px);
+          height: calc(100% - 2px);
+          inset-inline-start: 1px;
+          inset-block-start: 1px;
+          border-radius: 50%;
+        }
+        span {
+          position: relative;
+          z-index: 1;
+          font-size: 20px;
+          line-height: 26px;
+          font-weight: 600;
+          color: $white;
+          @include breakpoint(sm) {
+            font-size: 24px;
+            line-height: 31px;
+          }
+        }
+      }
       video {
         width: 100%;
         height: 100%;
@@ -786,12 +942,62 @@ body {
       display: flex;
       flex-direction: column;
       row-gap: 25px;
+      position: relative;
+      margin-top: 50px;
+      @include breakpoint(sm) {
+        margin-top: 70px;
+      }
+      &:after {
+        content: "";
+        background: url(/wp-content/themes/aitech/src/img/mobile-ball-line.svg);
+        background-repeat: no-repeat;
+        height: 270px;
+        width: 6px;
+        position: absolute;
+        inset-inline-start: 50%;
+        transform: translateX(-50%);
+        inset-block-start: -270px;
+        z-index: 1;
+      }
+      @include breakpoint(xs) {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      @include breakpoint(sm) {
+        justify-content: space-between;
+        position: relative;
+        &:after {
+          display: none;
+        }
+      }
       .item {
         width: 100%;
         max-width: 318px;
         margin: 0 auto;
+        position: relative;
+        @include breakpoint(sm) {
+          width: 50%;
+          max-width: 100%;
+          margin: 0;
+          &:after {
+            content: "";
+            background: url(/wp-content/themes/aitech/src/img/vector-top.svg);
+            transform: none;
+            inset-inline-start: 316px;
+            inset-block-end: -18px;
+            width: calc(100% - 440px);
+            height: 33%;
+            background-size: contain;
+            position: absolute;
+            background-repeat: no-repeat;
+          }
+        }
         .item-holder {
           position: relative;
+          @include breakpoint(sm) {
+            max-width: 318px;
+            width: 100%;
+          }
           &:after {
             content: "";
             background: url(/wp-content/themes/aitech/src/img/mobile-line.svg);
@@ -802,6 +1008,9 @@ body {
             transform: translateX(-50%);
             inset-block-end: -26px;
             background-repeat: no-repeat;
+            @include breakpoint(xs) {
+              display: none;
+            }
           }
           .icon {
             width: 70px;
@@ -913,6 +1122,28 @@ body {
             }
           }
         }
+        &:nth-child(2n) {
+          @include breakpoint(sm) {
+            display: flex;
+            justify-content: flex-end;
+            &:after {
+              transform: scaleX(-1);
+              inset-inline-end: 316px;
+              inset-inline-start: auto;
+            }
+          }
+        }
+        &:nth-child(3),
+        &:nth-child(4) {
+          @include breakpoint(sm) {
+            &:after {
+              background: url(/wp-content/themes/aitech/src/img/vector-bottom.svg);
+              inset-block-end: 46px;
+              background-repeat: no-repeat;
+              background-size: contain;
+            }
+          }
+        }
       }
     }
   }
@@ -920,6 +1151,8 @@ body {
     margin-top: 40px;
     display: flex;
     justify-content: center;
+    position: relative;
+    z-index: 1;
     .btn {
       width: fit-content;
       &.green-btn {
@@ -927,6 +1160,50 @@ body {
         border: 2px solid $green-accent;
         color: $green-accent;
         backdrop-filter: blur(5.9px);
+      }
+    }
+  }
+}
+
+.two-column-tabs {
+  padding: 40px 0;
+  @include breakpoint(sm) {
+    padding: 0 0 100px;
+  }
+  .heading {
+    text-align: center;
+    margin: 0 auto 24px;
+    max-width: 810px;
+    @include breakpoint(sm) {
+      margin-bottom: 46px;
+    }
+    h2 {
+      font-size: 32px;
+      line-height: 34px;
+      font-weight: 400;
+      color: $white;
+      margin-bottom: 16px;
+      @include breakpoint(sm) {
+        font-size: 4.45vw;
+        line-height: 4.8vw;
+      }
+      @include breakpoint(lg) {
+        font-size: 64px;
+        line-height: 69px;
+      }
+      span {
+        font-weight: 700;
+        color: $green-accent;
+      }
+    }
+    p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 18px;
+      color: $text-green;
+      @include breakpoint(sm) {
+        font-size: 16px;
+        line-height: 20px;
       }
     }
   }
