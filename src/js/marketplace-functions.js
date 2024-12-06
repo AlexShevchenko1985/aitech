@@ -124,3 +124,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   checkSliderAndScreenWidth();
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const twoColumnsTabs = document.querySelector('.two-column-tabs');
+  if (!twoColumnsTabs) return;
+
+  const tabsContentImage = document.querySelectorAll('.two-column-tabs .video-column');
+  const tabsItem = document.querySelectorAll('.two-column-tabs .tab-item');
+
+  tabsItem[0].classList.add('active');
+  tabsContentImage[0].classList.add('active');
+
+  tabsItem.forEach((tab, index) => {
+    tab.addEventListener('click', () => {
+      tabsItem.forEach(btn => btn.classList.remove('active'));
+      tabsContentImage.forEach(content => content.classList.remove('active'));
+
+      tab.classList.add('active');
+      tabsContentImage[index].classList.add('active');
+    });
+  });
+});

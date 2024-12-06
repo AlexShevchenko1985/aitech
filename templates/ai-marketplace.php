@@ -302,12 +302,26 @@ get_header();
 		<div class="tabs-holder">
 			<div class="content-column">
 				<div class="tab-item">
-					<h4>Perpetual Burn Mechanism</h4>
-					<p>To add further value for publishers, Solidus AITECH uses a perpetual burn mechanism. A portion of our profits from every transaction is burned, reducing the overall supply of AITECH tokens over time. This deflationary system helps increase the value of publisher earnings as the marketplace continues to grow.</p>
+					<div class="mobile-only">
+						<video playsinline autoplay muted loop poster="">
+                            <source src="<?= get_template_directory_uri() . '/build/video/coin_2x.webm' ?>" type="video/webm">
+                        </video>
+					</div>
+					<div class="content">
+						<h4>Perpetual Burn Mechanism</h4>
+                        <p>To add further value for publishers, Solidus AITECH uses a perpetual burn mechanism. A portion of our profits from every transaction is burned, reducing the overall supply of AITECH tokens over time. This deflationary system helps increase the value of publisher earnings as the marketplace continues to grow.</p>
+					</div>
 				</div>
 				<div class="tab-item">
-                    <h4>Empowering the Gig Economy</h4>
-                    <p>At Solidus AITECH, we are dedicated to democratizing the AI landscape by providing developers with the tools and marketplace to monetize their solutions, while enabling users to access high-performance AI technology. Whether you are a solo developer in the gig economy or a business looking to scale, Solidus AITECH connects you to the future of AI.</p>
+					<div class="mobile-only">
+                        <video playsinline autoplay muted loop poster="">
+                            <source src="<?= get_template_directory_uri() . '/build/video/coin_2x.webm' ?>" type="video/webm">
+                        </video>
+                    </div>
+                    <div class="content">
+                        <h4>Empowering the Gig Economy</h4>
+                        <p>At Solidus AITECH, we are dedicated to democratizing the AI landscape by providing developers with the tools and marketplace to monetize their solutions, while enabling users to access high-performance AI technology. Whether you are a solo developer in the gig economy or a business looking to scale, Solidus AITECH connects you to the future of AI.</p>
+                    </div>
                 </div>
 			</div>
 			<div class="video-column">
