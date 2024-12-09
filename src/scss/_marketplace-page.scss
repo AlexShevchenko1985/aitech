@@ -1402,9 +1402,12 @@ body {
   .video-bg {
     position: absolute;
     width: 100%;
-    height: calc(100% + 80px);
+    height: 100%;
     inset-inline-start: 0;
     inset-block-start: 0;
+    @include breakpoint(sm) {
+      height: calc(100% + 80px);
+    }
     video {
       width: 100%;
       height: 100%;
@@ -1414,7 +1417,7 @@ body {
   .container {
     height: 100%;
     .heading-holder {
-      min-height: 680px;
+      min-height: 377px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -1422,11 +1425,18 @@ body {
       text-align: center;
       position: relative;
       z-index: 1;
+      @include breakpoint(sm) {
+        min-height: 680px;
+      }
       h2 {
-        font-size: 48px;
-        line-height: 51px;
+        font-size: 24px;
+        line-height: 26px;
         font-weight: 400;
         color: $white;
+        @include breakpoint(sm) {
+          font-size: 48px;
+          line-height: 51px;
+        }
         span {
           font-weight: 700;
           color: $green-accent;
